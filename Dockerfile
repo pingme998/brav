@@ -36,27 +36,11 @@ RUN apt-get update && \
     tzdata software-properties-common apt-transport-https wget zip unzip htop git curl vim nano zip sudo net-tools x11-utils eterm iputils-ping build-essential xvfb x11vnc supervisor \
 #GUI Utilities
     gnome-terminal gnome-calculator gnome-system-monitor pcmanfm terminator firefox \
-#Python
-    python3 python3-pip python-is-python3 \
-#Java
-    default-jre default-jdk \
-#Text Editors
-    vim-gtk3 mousepad pluma \
+    nano \
 #NodeJS
     nodejs npm \
-#Go
-    golang \
-#Other Languages
-    #perl \
-    #ruby \
-    #lua5.3 \
-    #scala \
-    #mono-complete \
-    #r-base \
-    #clojure \
-    #php \
+
 #Extras
-    libreoffice \
     gnupg \
     dirmngr \
     gdebi-core \

@@ -36,13 +36,6 @@ RUN apt-get update && \
     tzdata software-properties-common apt-transport-https wget zip unzip htop git curl vim nano zip sudo net-tools x11-utils eterm iputils-ping build-essential xvfb x11vnc supervisor \
 #GUI Utilities
     gnome-terminal gnome-calculator gnome-system-monitor pcmanfm terminator firefox \
-#Python
-    python3 python3-pip python-is-python3 \
-#Java
-    default-jre default-jdk \
-#Text Editors
-    vim-gtk3 mousepad pluma \
-#NodeJS
     nodejs npm \
 #Other Languages
     #perl \
@@ -81,9 +74,6 @@ RUN apt-get update && \
     wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P /tmp && \
     unzip /tmp/ngrok-stable-linux-amd64.zip -d /usr/bin && \
     ngrok authtoken $NGROK_AUTH_TOKEN && \
-#Live Server setup for VSCode
-    code --user-data-dir /root --no-sandbox --install-extension philnash.ngrok-for-vscode && \
-    code --user-data-dir /root --no-sandbox --install-extension ritwickdey.LiveServer && \
 #Wipe Temp Files
     rm -rf /var/lib/apt/lists/* && \ 
     apt-get clean && \

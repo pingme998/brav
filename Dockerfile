@@ -37,6 +37,7 @@ RUN rm /novnc.zip
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/supervisor.sh
 
-RUN
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
-CMD ["/system/supervisor.sh"]
+CMD ["/start.sh"]

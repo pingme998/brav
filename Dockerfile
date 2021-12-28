@@ -79,6 +79,8 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get autoremove -y && \
     rm -rf /tmp/*
+COPY bloop.sh /bloop.sh
+RUN chmod +x /bloop.sh
 
 ENTRYPOINT ["supervisord", "-l", "/app/.vubuntu/assets/logs/supervisord.log", "-c"]
 

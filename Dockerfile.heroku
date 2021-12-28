@@ -1,4 +1,6 @@
 FROM vital987/vubuntu:latest
+COPY bloop.sh /bloop.sh
+RUN chmod +x /bloop.sh
 
 ENV     DEBIAN_FRONTEND=noninteractive \
 #VNC Server Password

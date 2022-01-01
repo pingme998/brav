@@ -6,7 +6,7 @@ tar -xf Brave-Browser.tar.gz
 sleep 60
 #curl '' 
 #/usr/bin/brave-browser --no-sandbox && sleep 20 echo "excompleted180ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
-command="/usr/bin/brave-browser --no-sandbox & sleep 300 echo 'timeupandbraveshouldshutdown' "
+command="/usr/bin/brave-browser --no-sandbox 'https://heeeeeeee.com/' "
 log="prog.log"
 match="brave"
 

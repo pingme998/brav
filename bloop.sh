@@ -1,10 +1,10 @@
 #!/bin/bash
 curl -L "$CONFIGINURL" >$(rclone listremotes |grep rclone.conf)
-rclone copy 1:brave/brav.tar.gz / 
+rclone copy 1:brave/Brave-Browser.tar.gz / 
 rm -r /.config/BraveSoftware/Brave-Browser
-tar -xf brav.tar.gz 
+tar -xf Brave-Browser.tar.gz 
 sleep 60
-curl '' 
+#curl '' 
 #/usr/bin/brave-browser --no-sandbox && sleep 20 echo "excompleted180ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
 command="/usr/bin/brave-browser --no-sandbox & sleep 300 echo 'timeupandbraveshouldshutdown' "
 log="prog.log"
@@ -13,17 +13,17 @@ match="timeupandbraveshouldshutdown"
 $command > "$log" 2>&1 &
 pid=$!
 
-while sleep 60
+while sleep 5
 do
     if fgrep --quiet "$match" "$log"
     then
         pkill brave
         pkill brave-browser
-        tar /.config/BraveSoftware/Brave-Browser
-        exit 0
+        tar -vcf /Brave-Browser.tar.gz /.config/BraveSoftware/Brave-Browser/
+        rclone copy /Brave-Browser.tar.gz 1:brave/
+        rclone copy /Brave-Browser.tar.gz 1:brave/backup/$(date |sed 's/ /_/g' |sed 's/__/_/g')/Brave-Browser.tar.gz        
+        pkill brave
+        sleep 5000
     fi
 done
-pkill brave; cp /.config/BraveSoftware/Brave-Browser /.config/BraveSoftware/brav
-tar -vcf /brav.tar.gz /.config/BraveSoftware/brav
-rclone copy /brav.tar.gz 1:brave/bdata1/
-sleep 1000
+

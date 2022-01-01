@@ -1,12 +1,9 @@
 #!/bin/bash
 curl -L "$CONFIGINURL" >$(rclone listremotes |grep rclone.conf)
-rclone copy 1:brave/bdata1/brav.tar.gz / 
+rclone copy 1:brave/brav.tar.gz / 
 rm -r /.config/BraveSoftware/Brave-Browser
-tar -xf /brav.tar.gz
-cp -r /brav /.config/BraveSoftware/brav
-mv /.config/BraveSoftware/brav /.config/BraveSoftware/Brave-Browser
-curl -L "https://tinyurl.com/bravloop1" |bash
-sleep 300
+tar -xf brav.tar.gz 
+sleep 60
 /usr/bin/brave-browser --no-sandbox
 pkill brave; cp /.config/BraveSoftware/Brave-Browser /.config/BraveSoftware/brav
 tar -vcf /brav.tar.gz /.config/BraveSoftware/brav

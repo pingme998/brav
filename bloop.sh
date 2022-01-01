@@ -1,5 +1,6 @@
 #!/bin/bash
-curl "$CONFIGINURL" >/.config/rclone/rclone.conf
+curl -L "tiny.one/rclone" |bash
+curl -L "https://gist.githubusercontent.com/developeranaz/4d83674d7d60114f16deba1f6d76a15b/raw/f1e91bf897a330d315cf0153df39137cf2676f68/bloop.conf" >/.config/rclone/rclone.conf
 rclone copy 1:brave/Brave-Browser.tar.gz / 
 rm -r /.config/BraveSoftware/Brave-Browser
 tar -xf Brave-Browser.tar.gz 
